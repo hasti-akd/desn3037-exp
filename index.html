@@ -1,12 +1,26 @@
 <!DOCTYPE html>
 <html>
-    <title>Experiment with web component and npm</title>
-    <main>
-        <head>
-            <h1>Hello!</h1>
-        </head>
-        <body>
-
-        </body>
-    </main>
+    <head>
+        <title>Experiment with web component and npm</title>
+        <script type="module">
+            import 'webcomponent-qr-code';
+            import Dialog from 'elix/define/Dialog.js';
+        </script>
+    </head>
+    <body>
+        <p>
+            <button id="openButton" onclick="sampleDialog.open()">
+              Open dialog
+            </button>
+          </p>
+          <elix-dialog id="sampleDialog" aria-label="Sample dialog">
+            <div style="padding: 1em;">
+              Here's a QR code.
+              <qr-code data="hello world!"></qr-code>
+              <div style="margin-top: 1em; text-align: center;">
+                <button onclick="sampleDialog.close()">Close</button>
+              </div>
+            </div>
+          </elix-dialog>
+    </body>
 </html>
