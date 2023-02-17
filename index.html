@@ -2,25 +2,47 @@
 <html>
     <head>
         <title>Experiment with web component and npm</title>
+        <style>
+          body{
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 18px;
+          }
+          button{
+            padding: 16px 26px;
+            background-color:lightgray;
+            border: 1px solid lightgray;
+            border-radius: 8px;
+            margin: auto;
+            cursor: pointer;
+            font-weight: 600;
+          }
+        </style>
         <script type="module">
             import 'webcomponent-qr-code';
             import Dialog from 'elix/define/Dialog.js';
+            import CarouselWithThumbnails from 'elix/define/CarouselWithThumbnails.js';
         </script>
     </head>
     <body>
-        <p>
-            <button id="openButton" onclick="sampleDialog.open()">
-              Open dialog
-            </button>
-          </p>
-          <elix-dialog id="sampleDialog" aria-label="Sample dialog">
-            <div style="padding: 1em;">
-              Here's a QR code.
-              <qr-code data="hello world!"></qr-code>
-              <div style="margin-top: 1em; text-align: center;">
-                <button onclick="sampleDialog.close()">Close</button>
-              </div>
-            </div>
-          </elix-dialog>
+      <elix-carousel-with-thumbnails style="width:50%;">
+        <!-- Carousel items such as img elements go here. -->
+        <img style="width:50%" src="https://github.blog/wp-content/uploads/2020/03/github-npm-blog.png?resize=1600%2C850">
+        <img style="width:50%" src="https://reconshell.com/wp-content/uploads/2021/12/nodejs.png">
+      </elix-carousel-with-thumbnails>
+      <br>
+      <p>
+        <button id="openButton" onclick="sampleDialog.open()">
+          Open Me
+        </button>
+      </p> 
+      <elix-dialog id="sampleDialog" aria-label="Sample dialog">
+        <div style="padding: 30px 30px;">
+          <p>Here's a QR code.</p>
+          <qr-code data="First experiment with web components and npm!"></qr-code>
+          <div style="margin-top: 1em; text-align: center;">
+            <button onclick="sampleDialog.close()">Close</button>
+          </div>
+        </div>
+      </elix-dialog>        
     </body>
 </html>
